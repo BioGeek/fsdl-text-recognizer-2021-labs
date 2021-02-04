@@ -10,9 +10,6 @@ RUN apt-get update \
   && ln -s /usr/bin/python3 python \
   && pip3 install --upgrade pip
 
-RUN apt-get -y install gcc g++ && \
-    rm -rf /var/lib/apt/lists/*
-
 COPY . .
 
 RUN python -m pip install -r ./requirements/dev.in

@@ -4,7 +4,7 @@ WORKDIR /workspace
 
 ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update && \
-    apt-get -y install gcc g++ && \
+    apt-get -y install gcc g++ python3 python3-pip && \
     rm -rf /var/lib/apt/lists/*
 
 COPY . .

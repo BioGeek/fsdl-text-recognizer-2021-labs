@@ -26,7 +26,8 @@ train-mnist-cnn-ddp:
 	python training/run_experiment.py --max_epochs=10 --gpus='-1' --accelerator=ddp --num_workers=20 --data_class=MNIST --model_class=CNN
 
 test-gpu:
-	python ./lab1/training/run_experiment.py --max_epochs=3 --gpus='2'
+	cd lab1
+	python ./training/run_experiment.py --max_epochs=3 --gpus='2'
 
 # Lint
 lint:

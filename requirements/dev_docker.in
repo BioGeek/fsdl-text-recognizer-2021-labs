@@ -16,3 +16,4 @@ safety
 scipy
 pillow
 wandb
+gpustat

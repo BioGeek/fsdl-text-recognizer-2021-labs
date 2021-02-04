@@ -1,4 +1,4 @@
-FROM pytorch/pytorch:1.7.1-cuda11.0-cudnn8-runtime
+FROM nvidia/cuda:10.2-cudnn7-runtime-ubuntu18.04
 
 WORKDIR /workspace
 

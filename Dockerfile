@@ -3,8 +3,14 @@ FROM nvidia/cuda:10.2-cudnn7-runtime-ubuntu18.04
 WORKDIR /workspace
 
 ENV DEBIAN_FRONTEND noninteractive
-RUN apt-get update && \
-    apt-get -y install gcc g++ python3 python3-pip && \
+
+RUN apt-get update \
+  && apt-get install -y python3-pip python3-dev \
+  && cd /usr/local/bin \
+  && ln -s /usr/bin/python3 python \
+  && pip3 install --upgrade pip
+
+RUN apt-get -y install gcc g++ && \
     rm -rf /var/lib/apt/lists/*
 
 COPY . .

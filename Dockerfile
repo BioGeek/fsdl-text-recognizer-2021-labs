@@ -11,3 +11,5 @@ COPY . .
 
 RUN python -m pip install -r ./requirements/dev.in
 RUN python -m pip install -r ./requirements/prod.in
+
+RUN echo "export PYTHONPATH=.:$PYTHONPATH" > ~/.bashrc

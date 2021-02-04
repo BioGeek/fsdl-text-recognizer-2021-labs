@@ -1,4 +1,5 @@
 """Experiment-running framework."""
+import setGPU
 import argparse
 import importlib
 

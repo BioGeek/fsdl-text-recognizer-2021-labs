@@ -17,3 +17,4 @@ scipy
 pillow
 wandb
 gpustat
+setGPU

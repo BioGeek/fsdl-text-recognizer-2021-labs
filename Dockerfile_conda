@@ -1,0 +1,17 @@
+# Partially based on https://pythonspeed.com/articles/activate-conda-dockerfile/#working
+FROM continuumio/miniconda3
+
+WORKDIR /code
+
+# Install make and gpu support
+RUN apt install build-essential -y --no-install-recommends
+
+# Create the environment:
+COPY . .
+RUN make conda-create
+
+# Make RUN commands use the new environment:
+SHELL ["conda", "run", "-n", "fsdl", "/bin/bash", "-c"]
+
+# install dependencies
+RUN make pip-docker
